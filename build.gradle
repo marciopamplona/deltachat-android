@@ -1,5 +1,6 @@
 buildscript {
     repositories {
+        google()
         maven {
             url 'https://maven.google.com/'
             name 'Google'
@@ -8,13 +9,18 @@ buildscript {
             url "https://repo1.maven.org/maven2"
             jcenter()
         }
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.4.1'
+        classpath "gradle.plugin.tqrg.leafactor.ci:leafactor:0.0.2"
     }
 }
 
 apply plugin: 'com.android.application'
+apply plugin: 'tqrg.leafactor.ci'
 
 repositories {
     google()
